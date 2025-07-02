@@ -6,7 +6,7 @@ const enjoyText = document.querySelector('.enjoy-text');
 
 let fillTimeout;
 
-button.addEventListener('mousedown', () => {
+const startPress = () => {
     fillBar.style.transition = 'width 1.5s ease-in-out';
     fillBar.style.width = '100%';
 
@@ -30,4 +30,7 @@ button.addEventListener('mousedown', () => {
             }, 50); // small delay to ensure browser applies layout
         }, 500); // match fade-out transition
     }, 1500); // after fill animation
-});
+};
+
+button.addEventListener('mousedown', startPress);
+button.addEventListener('touchstart', startPress);
